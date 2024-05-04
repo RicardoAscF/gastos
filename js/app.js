@@ -45,7 +45,7 @@ let totalExpCurrentMonth    = 0;
 let arrayTask               = [];
 let arrayCompletedTasks     = [];
 let arrayLastDone           = [
-    {name: "Ejercicio", last:0},
+    {name: "Leche", last:0},
     {name: "Lavar Baño", last:0},
     {name: "Lavar Dientes", last:0},
     {name: "Barrer", last:0},
@@ -254,7 +254,7 @@ datePick.addEventListener('change', (evt) =>{
 
             async function taskCanceled(evt){
                 let idTask = evt.target.id;
-                await deleteDoc(doc(dbGet, "tasks", idTask));
+                await deleteDoc(doc(dbGet, "gastos", idTask));
 
                 displayToast('Canceling');
 
@@ -520,7 +520,7 @@ datePick.addEventListener('change', (evt) =>{
 
 
             function fillLastDone(id,taskName,exp,selectedIcon,dateStarted,date){
-                if(taskName=="Ejercicio"){
+                if(taskName=="Leche"){
                     console.log(arrayLastDone[0].last);
                     if(dateStarted>arrayLastDone[0].last){
                         arrayLastDone[0].last=dateStarted;
@@ -705,7 +705,8 @@ datePick.addEventListener('change', (evt) =>{
                                         console.log("eval");    
                                         let startDate = new Date(Number(date));
                                        
-                                        pTitles.innerText=`${taskName} -- ${startDate.getDate()} at ${getHMString(startDate.getHours())}: ${getHMString(startDate.getMinutes())}h`;
+                                        pTitles.innerText=`${taskName}`;
+                                        //${startDate.getDate()} at ${getHMString(startDate.getHours())}: ${getHMString(startDate.getMinutes())}h
 
 
                                     let divCard_content2                  = document.createElement('div');
