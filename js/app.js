@@ -11,14 +11,21 @@
  // Your web app's Firebase configuration
  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
  const firebaseConfig = {
-     apiKey: "AIzaSyDKjmJ28jrpzJ7MF5tgFGXfYBI65BQP2Dc",
-     authDomain: "todo-exp-b768a.firebaseapp.com",
-     projectId: "todo-exp-b768a",
-     storageBucket: "todo-exp-b768a.appspot.com",
-     messagingSenderId: "1069309297345",
-     appId: "1:1069309297345:web:fbcf23ac219884faea8a40",
-     measurementId: "G-Z5DGDQ95TY"
- };
+
+    apiKey: "AIzaSyBA81yW4HsDXyZ6hCRhMOqMrM7UHHW4JAM",
+
+    authDomain: "new-gastos.firebaseapp.com",
+
+    projectId: "new-gastos",
+
+    storageBucket: "new-gastos.appspot.com",
+
+    messagingSenderId: "648059142072",
+
+    appId: "1:648059142072:web:19fd0b19de9c1c03df994d"
+
+  };
+
 
    // Initialize Firebase
    const app = initializeApp(firebaseConfig);
@@ -222,7 +229,7 @@ datePick.addEventListener('change', (evt) =>{
 
                 
                 
-                await deleteDoc(doc(dbGet, "tasks", idTask));
+                await deleteDoc(doc(dbGet, "gastos", idTask));
                 insertCompletedTasksDB(taskName, exp, selectedIcon, date, dateFinshed);
                 //insertCompletedTasksDB*();
 
@@ -294,10 +301,10 @@ datePick.addEventListener('change', (evt) =>{
 
 
             async function insertDB(id,taskName,exp,selectedIcon){
-                db.collection("tasks").add({
+                db.collection("gastos").add({
                     id: id,
-                    taskName: taskName,
-                    exp: exp,
+                    gasto: taskName,
+                    precio: exp,
                     selectedIcon, selectedIcon,
                     date: Date.now()
                 })
@@ -328,35 +335,11 @@ datePick.addEventListener('change', (evt) =>{
             }
 
 
-            async function insertDailyTasks(taskName,exp,selectedIcon2,date2){
-                db.collection("tasks").add({
-                    taskName: taskName,
-                    exp: exp,
-                    selectedIcon: selectedIcon2,
-                    date: date2
-                })
-                .then((docRef) => {
-                    displayToast(`${taskName} Added`);
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-            }//insertDayliTaks
+         
 
 
 
-            async function insertNewDay(){
-                await deleteDoc(doc(dbGet, "date", lastDayId));
-                db.collection("date").add({
-                    today: Date.now()
-                })
-                .then((docRef) => {
-                    displayToast('Adding Daily Tasks');
-                })
-                .catch((error) => {
-                    
-                });
-            }
+           
 
 
 
@@ -379,12 +362,12 @@ datePick.addEventListener('change', (evt) =>{
             }
 
             //Obtiene Task to do
-            const querySnapshot = await getDocs(collection(dbGet, "tasks"));
+            const querySnapshot = await getDocs(collection(dbGet, "gastos"));
                 querySnapshot.forEach((doc) => {
                         let objTasks = {
                             id:             doc.id,
-                            taskName:       doc.data().taskName,
-                            exp:            doc.data().exp,
+                            taskName:       doc.data().gasto,
+                            exp:            doc.data().precio,
                             selectedIcon:   doc.data().selectedIcon,
                             timeStart:           doc.data().timeStart
                         }
@@ -499,81 +482,7 @@ datePick.addEventListener('change', (evt) =>{
 
             }//getDayString
 
-            function getToday(){
-                console.log("im in funcion get today");
-                let currentDay = new Date(Date.now());
-                let DBCurrentDay = new Date(Number(lastDay));
-                if(currentDay.getDate() == DBCurrentDay.getDate()){
-                    console.log("Yes same day");
-                    console.log(lastDayId);
-                }else{
-                    console.log("different day");
-                    insertNewDay();//aqui mando los datos como argumento
-                    
-
-                    setTimeout(function() { 
-                        insertDailyTasks("Cenar", "15", "3", Date.now());
-                    }, 50);
-
-                    setTimeout(function() { 
-                        insertDailyTasks("Comer", "15", "3", Date.now());
-                    }, 50);
-
-
-                    setTimeout(function() { 
-                        insertDailyTasks("Desayunar", "15", "3", Date.now());
-                    }, 50);
-
-                    setTimeout(function() {  
-                        insertDailyTasks("Ejercicio", "60", "3", Date.now());
-                    }, 50);
-
-                    setTimeout(function() {  
-                        insertDailyTasks("Lavar Dientes", "5", "3", Date.now());
-                    }, 50)
-                    
-                    setTimeout(function() {  
-                        insertDailyTasks("Lavar Ropa", "20", "4", Date.now());
-                    }, 50);
-
-                    setTimeout(function() {  
-                        insertDailyTasks("Lavar Trastes", "15", "4", Date.now());
-                    }, 50);
-
-                    setTimeout(function() {  
-                        insertDailyTasks("Levantarme", "0", "3", Date.now());
-                    }, 50);
-
-                  
-
-                    setTimeout(function() {  
-                        insertDailyTasks("Preparar Desayuno", "15", "1", Date.now());
-                    }, 50);
-
-                    setTimeout(function() {  
-                        insertDailyTasks("Preparar Comida", "25", "1", Date.now());
-                    }, 50);
-
-                    setTimeout(function() {  
-                        insertDailyTasks("Curso Linux 30 minutos", "30", "5", Date.now());
-                    }, 50);
-
-                    setTimeout(function() {  
-                        insertDailyTasks("Curso ONE 30 minutos", "30", "5", Date.now());
-                    }, 50);
-
-                    setTimeout(function() {  
-                        insertDailyTasks("Curso Shell 30 minutos", "30", "7", Date.now());
-                    }, 50);
-
-                    setTimeout(function() {  
-                        insertDailyTasks("leer correos Shell", "30", "7", Date.now());
-                    }, 50);
-
-                }//ELSE
-
-              
-            }//GetToday
+           
 
 
 // Fin FUnciones Date
@@ -1039,7 +948,7 @@ function sortArrayGetData(){
 
    
     getData();
-    getToday(); //Es la funcion para determinar un nuevo dia
+   // getToday(); //Es la funcion para determinar un nuevo dia
 }//
 
 function getData(){
