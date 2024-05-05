@@ -487,10 +487,10 @@ datePick.addEventListener('change', (evt) =>{
 // **************************************************************** Funciones Manipular DOM ******************************************
             function displayExp(totalExp,monthTotalExp){
                 let pTotalExp = document.getElementById('completedTask');
-                pTotalExp.innerText = ` ${totalExp} Exp`
+                pTotalExp.innerText = `$ ${totalExp}`
 
                 let pTotalMonthExp = document.getElementById('completedMonthTask');
-                pTotalMonthExp.innerText = `Completed This Month - ${monthTotalExp} XP`;
+                pTotalMonthExp.innerText = `Money this Month - $ ${monthTotalExp}`;
                 
             }
 
@@ -647,7 +647,7 @@ datePick.addEventListener('change', (evt) =>{
                                     
                                     
                                         
-                                        pLight.innerText=`${exp} px`;
+                                        pLight.innerText=`$ ${exp}`;
                                         
 
 
@@ -831,7 +831,7 @@ datePick.addEventListener('change', (evt) =>{
 
                 let p                       = document.createElement('p');
                 p.classList.add('light', 'tektur');
-                p.innerText = `${exp} EXP`; //AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+                p.innerText = `$ ${exp}`; //AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 
                 
 
