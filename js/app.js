@@ -45,17 +45,12 @@ let totalExpCurrentMonth    = 0;
 let arrayTask               = [];
 let arrayCompletedTasks     = [];
 let arrayLastDone           = [
+    {name: "Corte cabello", last:0},
+    {name: "Crema", last:0},
+    {name: "Queso oaxaca", last:0},
     {name: "Leche", last:0},
-    {name: "Lavar Baño", last:0},
-    {name: "Lavar Dientes", last:0},
-    {name: "Barrer", last:0},
-    {name: "Trapear", last:0},
-    {name: "Levantarme", last:0},
-    {name: "Sin X", last:0},
-    {name: "Sin X Talk", last:0},
-    {name: "Curso ONE", last:0},
-    {name: "Curso Linux", last:0},
-    {name: "Mas de 2 horas en el celular", last:0},
+    {name: "Pizza", last:0},
+    {name: "Tortillas", last:0}
 ]
 
 // Fin Variables Globales 
@@ -520,7 +515,7 @@ datePick.addEventListener('change', (evt) =>{
 
 
             function fillLastDone(id,taskName,exp,selectedIcon,dateStarted,date){
-                if(taskName=="Leche"){
+                if(taskName.includes("Corte Cabello")){
                     console.log(arrayLastDone[0].last);
                     if(dateStarted>arrayLastDone[0].last){
                         arrayLastDone[0].last=dateStarted;
@@ -528,16 +523,7 @@ datePick.addEventListener('change', (evt) =>{
                 
                 }
 
-                if(taskName=="Ejercicio"){
-                    console.log(arrayLastDone[0].last);
-                    if(dateStarted>arrayLastDone[0].last){
-                        arrayLastDone[0].last=dateStarted;
-                    }
-                
-                }
-
-                //Hay un arreglo deobjetos al inicio llenar tarea ahi tambien
-                if(taskName=="Lavar Baño"){
+                if(taskName=="Crema"){
                     console.log(arrayLastDone[1].last);
                     if(dateStarted>arrayLastDone[1].last){
                         arrayLastDone[1].last=dateStarted;
@@ -545,7 +531,8 @@ datePick.addEventListener('change', (evt) =>{
                 
                 }
 
-                if(taskName=="Lavar Dientes"){
+                //Hay un arreglo deobjetos al inicio llenar tarea ahi tambien
+                if(taskName.includes("Queso Oaxaca")){
                     console.log(arrayLastDone[2].last);
                     if(dateStarted>arrayLastDone[2].last){
                         arrayLastDone[2].last=dateStarted;
@@ -553,7 +540,7 @@ datePick.addEventListener('change', (evt) =>{
                 
                 }
 
-                if(taskName=="Barrer"){
+                if(taskName=="Leche"){
                     console.log(arrayLastDone[3].last);
                     if(dateStarted>arrayLastDone[3].last){
                         arrayLastDone[3].last=dateStarted;
@@ -561,8 +548,7 @@ datePick.addEventListener('change', (evt) =>{
                 
                 }
 
-
-                if(taskName=="Trapear"){
+                if(taskName=="Pizza"){
                     console.log(arrayLastDone[4].last);
                     if(dateStarted>arrayLastDone[4].last){
                         arrayLastDone[4].last=dateStarted;
@@ -571,74 +557,18 @@ datePick.addEventListener('change', (evt) =>{
                 }
 
 
-                            
-                if(taskName.includes("Levantarme")){
+                if(taskName=="Tortillas"){
                     console.log(arrayLastDone[5].last);
-                    console.log("exp aquiiii");
-                    console.log(exp);
-                    let a = Number(exp);
-                    console.log(typeof a);
-                    console.log(a);
-            
-                    if(a<0){
-                        if(dateStarted>arrayLastDone[5].last){
-                            arrayLastDone[5].last=dateStarted;
-                        }
-                    }
-                    
-                
-                }
-
-
-                if(taskName.includes("X")){
-                    if(dateStarted>arrayLastDone[6].last){
-                        arrayLastDone[6].last=dateStarted;
-                    }
-                }
-
-                if(taskName.includes("Talk")){
-                    if(dateStarted>arrayLastDone[7].last){
-                        arrayLastDone[7].last=dateStarted;
-                    }
-                }
-            
-                if(taskName.includes("Curso ONE")){
-                    console.log(arrayLastDone[8].last);
-                    if(dateStarted>arrayLastDone[8].last){
-                        arrayLastDone[8].last=dateStarted;
-                    }
-                
-                }
-
-                if(taskName.includes("Curso Linux")){
-                    console.log(arrayLastDone[9].last);
-                    if(dateStarted>arrayLastDone[9].last){
-                        arrayLastDone[9].last=dateStarted;
+                    if(dateStarted>arrayLastDone[5].last){
+                        arrayLastDone[5].last=dateStarted;
                     }
                 
                 }
 
 
-                            
-                if(taskName.includes("Horas en el celular")){
-                    console.log(arrayLastDone[10].last);
-                    console.log("exp aquiiii");
-                    console.log(exp);
-                    let a = Number(exp);
-                    console.log(typeof a);
-                    console.log(a);
-            
-                    if(a<0){
-                        if(dateStarted>arrayLastDone[10].last){
-                            arrayLastDone[10].last=dateStarted;
-                        }
-                    }
-                    
+                 
                 
-                }
-
-                
-            }
+            }//FillLastDone
 
             function fillCompletedTasks(id,taskName,exp,selectedIcon,dateStarted,date){
             
