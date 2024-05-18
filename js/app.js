@@ -330,15 +330,6 @@ datePick.addEventListener('change', (evt) =>{
             }
 
 
-         
-
-
-
-           
-
-
-
-
             async function insertCompletedTasksDB(taskName,exp,selectedIcon,date,dateFinished){
             
                 db.collection("completedTasks").add({
@@ -765,14 +756,14 @@ datePick.addEventListener('change', (evt) =>{
 
 
                 iMaterial_icons.innerText=icon;//AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
-                iMaterial_iconsStart.innerText=getSelectedIcon("10");
+                iMaterial_iconsStart.innerText=getSelectedIcon("11");
 
               
 
                 if(date!=undefined){
                     iMaterial_iconsStart.innerText=getSelectedIcon("11");
                 }else{
-                    iMaterial_iconsStart.innerText=getSelectedIcon("10");
+                    iMaterial_iconsStart.innerText=getSelectedIcon("11");
                 }
 
                 iMaterial_iconsStart.classList.add("start-task", "blue-text");
@@ -952,10 +943,6 @@ function getCompletedData(month){
 
 
 
-
-
-
-
 function getSelectedIcon(selectedIcon){
          
 
@@ -967,49 +954,55 @@ function getSelectedIcon(selectedIcon){
 
 
     if(selectedIcon == '2'){
-        return 'insert_emoticon';//exercise  
+        return 'store';//exercise  
     }
 
 
     if(selectedIcon == '3'){
-        return 'favorite';//Havin fun
+        return 'credit_card';//Havin fun
     }
 
     
     if(selectedIcon == '4'){
-        return 'home';
+        return 'shopping_cart';
     }
 
     if(selectedIcon == '5'){ //personal projectas
-        return 'computer';
+        return 'local_laundry_service';
     }
 
 
     if(selectedIcon == '6'){ //shopping
-        return 'shopping_cart';
+        return 'favorite    ';
     }
 
 
     if(selectedIcon == '7'){ //job
-        return 'attach_money';
+        return 'brush';
     }
 
     if(selectedIcon == '8'){
-        return 'do_not_disturb_alt';
+        return 'directions_walk';
     }
 
     if(selectedIcon == '9'){  // X
-        return 'close';
+        return 'attach_money';
     }
 
     if(selectedIcon == '10'){ 
-        return 'play_arrow';
+        return 'directions_railway';
     }
 
 
     if(selectedIcon == '11'){
+        return 'play_arrow';
+    }
+
+    if(selectedIcon == '12'){
         return 'hourglass_full';
     }
+
+
 
 
 
