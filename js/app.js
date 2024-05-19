@@ -604,7 +604,7 @@ datePick.addEventListener('change', (evt) =>{
 
                                             let iMaterial_IconsX                         = document.createElement('i');
                                             iMaterial_IconsX.classList.add('material-icons',"red-text", "icon-delete-completed-task");
-                                            iMaterial_IconsX.innerText=getSelectedIcon("9");
+                                            iMaterial_IconsX.innerText=getSelectedIcon("14");
                                             iMaterial_IconsX.setAttribute("id", id );
 
                                             iMaterial_IconsX.addEventListener('click', (evt) =>{
@@ -756,14 +756,14 @@ datePick.addEventListener('change', (evt) =>{
 
 
                 iMaterial_icons.innerText=icon;//AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
-                iMaterial_iconsStart.innerText=getSelectedIcon("11");
+                iMaterial_iconsStart.innerText=getSelectedIcon("12");
 
               
 
                 if(date!=undefined){
-                    iMaterial_iconsStart.innerText=getSelectedIcon("11");
+                    iMaterial_iconsStart.innerText=getSelectedIcon("12");
                 }else{
-                    iMaterial_iconsStart.innerText=getSelectedIcon("11");
+                    iMaterial_iconsStart.innerText=getSelectedIcon("12");
                 }
 
                 iMaterial_iconsStart.classList.add("start-task", "blue-text");
@@ -981,25 +981,35 @@ function getSelectedIcon(selectedIcon){
         return 'brush';
     }
 
-    if(selectedIcon == '8'){
+
+    if(selectedIcon == '8'){ //job
+        return 'battery_full';
+    }
+
+
+    if(selectedIcon == '9'){
         return 'directions_walk';
     }
 
-    if(selectedIcon == '9'){  // X
+    if(selectedIcon == '10'){  // X
         return 'attach_money';
     }
 
-    if(selectedIcon == '10'){ 
+    if(selectedIcon == '11'){ 
         return 'directions_railway';
     }
 
 
-    if(selectedIcon == '11'){
+    if(selectedIcon == '12'){
         return 'play_arrow';
     }
 
-    if(selectedIcon == '12'){
+    if(selectedIcon == '13'){
         return 'hourglass_full';
+    }
+
+    if(selectedIcon == '14'){
+        return 'close';
     }
 
 
