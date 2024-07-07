@@ -604,7 +604,7 @@ datePick.addEventListener('change', (evt) =>{
 
                                             let iMaterial_IconsX                         = document.createElement('i');
                                             iMaterial_IconsX.classList.add('material-icons',"red-text", "icon-delete-completed-task");
-                                            iMaterial_IconsX.innerText=getSelectedIcon("14");
+                                            iMaterial_IconsX.innerText=getSelectedIcon("15");
                                             iMaterial_IconsX.setAttribute("id", id );
 
                                             iMaterial_IconsX.addEventListener('click', (evt) =>{
@@ -756,14 +756,14 @@ datePick.addEventListener('change', (evt) =>{
 
 
                 iMaterial_icons.innerText=icon;//AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
-                iMaterial_iconsStart.innerText=getSelectedIcon("12");
+                iMaterial_iconsStart.innerText=getSelectedIcon("13");
 
               
 
                 if(date!=undefined){
-                    iMaterial_iconsStart.innerText=getSelectedIcon("12");
+                    iMaterial_iconsStart.innerText=getSelectedIcon("13");
                 }else{
-                    iMaterial_iconsStart.innerText=getSelectedIcon("12");
+                    iMaterial_iconsStart.innerText=getSelectedIcon("13");
                 }
 
                 iMaterial_iconsStart.classList.add("start-task", "blue-text");
@@ -946,69 +946,72 @@ function getCompletedData(month){
 function getSelectedIcon(selectedIcon){
          
 
-    
-
+   
     if(selectedIcon == '1'){
-        return 'restaurant';
+        return 'local_dining';
     }
 
-
     if(selectedIcon == '2'){
-        return 'store';//exercise  
+        return 'local_pizza';
     }
 
 
     if(selectedIcon == '3'){
+        return 'store';//exercise  
+    }
+
+
+    if(selectedIcon == '4'){
         return 'credit_card';//Havin fun
     }
 
     
-    if(selectedIcon == '4'){
+    if(selectedIcon == '5'){
         return 'shopping_cart';
     }
 
-    if(selectedIcon == '5'){ //personal projectas
+    if(selectedIcon == '6'){ //personal projectas
         return 'local_laundry_service';
     }
 
 
-    if(selectedIcon == '6'){ //shopping
+    if(selectedIcon == '7'){ //shopping
         return 'favorite    ';
     }
 
 
-    if(selectedIcon == '7'){ //job
+    if(selectedIcon == '8'){ //job
         return 'brush';
     }
 
 
-    if(selectedIcon == '8'){ //job
+    if(selectedIcon == '9'){ //job
         return 'battery_full';
     }
 
 
-    if(selectedIcon == '9'){
+    if(selectedIcon == '10'){
         return 'directions_walk';
     }
 
-    if(selectedIcon == '10'){  // X
+    if(selectedIcon == '11'){  // X
         return 'attach_money';
     }
 
-    if(selectedIcon == '11'){ 
+    if(selectedIcon == '12'){ 
         return 'directions_railway';
     }
 
 
-    if(selectedIcon == '12'){
+    if(selectedIcon == '13'){
         return 'play_arrow';
     }
 
-    if(selectedIcon == '13'){
+    if(selectedIcon == '14'){
         return 'hourglass_full';
     }
 
-    if(selectedIcon == '14'){
+    if(selectedIcon == '15'){
         return 'close';
     }
 
