@@ -756,7 +756,7 @@ datePick.addEventListener('change', (evt) =>{
 
 
                 iMaterial_icons.innerText=icon;//AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
-                iMaterial_iconsStart.innerText=getSelectedIcon("13");
+                iMaterial_icons .innerText=getSelectedIcon("13");
 
               
 
